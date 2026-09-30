@@ -9,9 +9,9 @@ class Square(Figure):
         self.a = a
 
     @property
-    def get_perimeter(self):
+    def perimeter(self):
         return self.a * 4
 
     @property
-    def get_area(self):
+    def area(self):
         return self.a ** 2

@@ -10,9 +10,9 @@ class Circle(Figure):
         self.a = a
 
     @property
-    def get_perimeter(self):
+    def perimeter(self):
         return 2 * math.pi * self.a
 
     @property
-    def get_area(self):
-        return math.pi * self.a **2
+    def area(self):
+        return math.pi * self.a ** 2

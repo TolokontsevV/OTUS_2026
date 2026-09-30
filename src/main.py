@@ -7,12 +7,12 @@ from src.triangle import Triangle
 if __name__ == '__main__':
     try:
         t = Triangle(3, 4, 6)
-        c = Circle (10)
-        r = Rectangle (10, 12)
+        c = Circle(10)
+        r = Rectangle(10, 12)
         s = Square(10)
 
-        print(t.get_area)
-        print(c.get_area)
+        print(t.area)
+        print(c.area)
         print(t.add_area(c))
-    except Exception as error:
+    except ValueError as error:
         print(error)

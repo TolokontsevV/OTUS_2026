@@ -2,20 +2,17 @@ from abc import ABC, abstractmethod
 
 
 class Figure(ABC):
-    def __init__(self):
+
+    @abstractmethod
+    def perimeter(self):
         pass
 
     @abstractmethod
-    def get_perimeter(self):
-        pass
-
-    @abstractmethod
-    def get_area(self):
+    def area(self):
         pass
 
     def add_area(self, other_figure):
-        try:
-            result = self.get_area + other_figure.get_area
-            return result
-        except Exception:
+        if isinstance(other_figure, Figure):
+            return self.area + other_figure.area
+        else:
             raise ValueError('Can add only other figure')
