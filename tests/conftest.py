@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope='session', autouse=False)
 def check_circle():
     print('\n Start check circle')
 
