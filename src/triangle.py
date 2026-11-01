@@ -5,14 +5,17 @@ from src.figure import Figure
 class Triangle(Figure):
     def __init__(self, a, b, c):
         super().__init__()
-        if a <= 0 or b <= 0 or c <= 0 or a + b == c:
-            raise ValueError(f" a, b, c, must be positive, actual sizes is {a}/{b}/{c}, or sum of two sides equals to other side")
         self.a = a
         self.b = b
         self.c = c
 
-        if a + b < c or a + c < b or b + c < a:
-            raise ValueError(f" with this sizes make triangle is impossible, actual sizes is {a}/{b}/{c}")
+    def above_0(self):
+        if self.a <= 0 or self.b <= 0 or self.c <= 0 or self.a + self.b == self.c:
+            raise ValueError(f" a, b, c, must be positive, actual sizes is {self.a}/{self.b}/{self.c}, or sum of two sides equals to other side")
+
+    def impossible_triangle(self):
+        if self.a + self.b < self.c or self.a + self.c < self.b or self.b + self.c < self.a:
+            raise ValueError(f" with this sizes make triangle is impossible, actual sizes is {self.a}/{self.b}/{self.c}")
 
     @property
     def perimeter(self):
